@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Bellicon from 'D:/SSG-FINAL/CAR_MARKET/car_market_place/src/Header/image/bellicon.svg';
+// import Bellicon from 'D:/SSG-FINAL/CAR_MARKET/car_market_place/src/Header/image/bellicon.svg';
+
+import Bellicon from 'C:/Users/sugan/OneDrive/Documents/Desktop/Other stuff/CAR_MARKET/src/Header/image/bellicon.svg'
 import Avatar from "../Header/image/avatar.svg";
 
 export default function Header() {
