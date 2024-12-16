@@ -3,18 +3,32 @@ import Header from "../Header/header";
 import { Card } from "flowbite-react";
 import { ReactComponent as EyeOff } from './image/eyeoff.svg'; 
 import { ReactComponent as Eye } from './image/eye.svg'; 
+
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div>
+      <style>
+        {`
+          input[type="password"]::-ms-reveal, 
+          input[type="password"]::-ms-clear {
+            display: none;
+          }
+
+          input[type="password"]::-webkit-password-eye {
+            display: none;
+          }
+        `}
+      </style>
+
       <Header />
       <div className="h-screen w-full bg-[url('https://shorturl.at/DGQGu')] bg-cover bg-center flex items-center justify-center">
         <Card className="w-full max-w-[450px] h-auto border-2 border-orange-400 ">
           <div className="flex justify-center items-center flex-col gap-4 p-3">
-          <h1 className="text-2xl font-bold flex items-center">
-  <div className="text-orange-400 pr-2">Login</div> to your account
-</h1>
+            <h1 className="text-2xl font-bold flex items-center">
+              <div className="text-orange-400 pr-2">Login</div> to your account
+            </h1>
             <label className="w-full font-medium text-sm text-gray-600">Email</label>
             <input
               type="email"
@@ -34,7 +48,7 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"} 
                   id="password"
                   placeholder="Enter your password"
-                  className="border-2 border-gray-300 rounded-lg w-full h-[40px] px-3 text-sm hover:border-orange-400 focus:border-orange-400 focus:outline-none focus:ring-0"
+                  className="border-2 border-gray-300 rounded-lg w-full h-[40px] px-3 text-sm hover:border-orange-400 focus:border-orange-400 focus:outline-none focus:ring-0 appearance-none"
                 />
                 <button
                   type="button"

@@ -1,6 +1,6 @@
 import React from "react";
 // import MainApp from "./MainApp";
-// import LoginPage from "./LoginSignUp/LoginPage";
+import LoginPage from "./LoginSignUp/LoginPage";
 import SignUp from "./LoginSignUp/SignUp";
 import SellCarOne from "./SellCarOnline/SellCarOne";
 import SellCarTwo from "./SellCarOnline/SellCarTwo";
@@ -9,11 +9,11 @@ function App() {
   return (
     <div>
       {/* <MainApp /> */}
-      {/* <LoginPage/> */}
+      <LoginPage/>
       {/* <SignUp/> */}
       {/* <SellCarOne /> */}
       {/* <SellCarTwo/> */}
-      <SellCarThree/>
+      {/* <SellCarThree/> */}
     </div>
   );
 }
