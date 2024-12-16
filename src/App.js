@@ -5,15 +5,19 @@ import SignUp from "./LoginSignUp/SignUp";
 import SellCarOne from "./SellCarOnline/SellCarOne";
 import SellCarTwo from "./SellCarOnline/SellCarTwo";
 import SellCarThree from "./SellCarOnline/SellCarThree";
+import PendingWorks from "./MechanicalPage/PendingWorks";
+import FillInspectionDataForm from "./MechanicalPage/FillInspectionDataForm";
 function App() {
   return (
     <div>
       {/* <MainApp /> */}
-      <LoginPage/>
+      {/* <LoginPage/> */}
       {/* <SignUp/> */}
       {/* <SellCarOne /> */}
       {/* <SellCarTwo/> */}
       {/* <SellCarThree/> */}
+      {/* <PendingWorks/> */}
+      <FillInspectionDataForm/>
     </div>
   );
 }
