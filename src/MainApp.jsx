@@ -11,11 +11,13 @@ import UserProfile from "./UserProfile/UserProfile";
 import MyFavourites from "./UserProfile/MyFavourites";
 import Appointments from "./UserProfile/Appointments";
 import MyListings from "./UserProfile/MyListings";
+import Report from "./Inspection/MechanicStatus";
+import pendingSvg from "./Inspection/image/pending.svg";
 
 export default function MainApp() {
   const [Log, SetLog] = useState(false);
   const [Notifications, SetNotifications] = useState(false);
-  const [User, SetUser] = useState(false);
+  const [User, SetUser] = useState(true);
   const [Favorites, setFavorites] = useState(false);
   const [Appoint, SetAppoint] = useState(false);
   const [Listing, SetListing] = useState(false);
@@ -24,7 +26,11 @@ export default function MainApp() {
   const [Select, SetSelect] = useState(false);
   const [CarPrice, SetCarPrice] = useState(false);
 
-  function carPrice(){
+  function DisplayToggle() {
+    SetStatusReport(false);
+  }
+
+  function carPrice() {
     SetCarPrice(true);
     SetSearch(false);
     SetLog(false);
@@ -35,7 +41,7 @@ export default function MainApp() {
     SetListing(false);
     SetSelect(false);
   }
-  function Searchcar(){
+  function Searchcar() {
     SetCarPrice(false);
     SetSearch(true);
     SetLog(false);
@@ -63,7 +69,6 @@ export default function MainApp() {
     SetNotifications(true);
     setFavorites(false);
     SetLog(false);
-    SetUser(true);
     SetAppoint(false);
     SetListing(false);
     SetSearch(false);
@@ -87,7 +92,6 @@ export default function MainApp() {
     setFavorites(true);
     SetLog(false);
     SetNotifications(false);
-    SetUser(true);
     SetAppoint(false);
     SetListing(false);
     SetSearch(false);
@@ -100,36 +104,34 @@ export default function MainApp() {
     SetNotifications(false);
     setFavorites(false);
     SetLog(false);
-    SetUser(true);
     SetListing(false);
     SetSearch(false);
     SetSelect(false);
   }
 
-  function Listings(){
+  function Listings() {
     SetCarPrice(false);
     SetListing(true);
     SetNotifications(false);
     setFavorites(false);
     SetLog(false);
-    SetUser(true);
     SetAppoint(false);
     SetSearch(false);
     SetSelect(false);
   }
 
-  function Bellicon(){
+  function Bellicon() {
     SetCarPrice(false);
     SetNotifications(true);
     SetListing(false);
     SetAppoint(false);
     SetLog(false);
-    SetUser(true);
     setFavorites(false);
     SetSearch(false);
     SetSelect(false);
+    SetUser(true);
   }
-  function SelectCar(){
+  function SelectCar() {
     SetCarPrice(false);
     SetSelect(true);
     SetSearch(false);
@@ -142,20 +144,38 @@ export default function MainApp() {
     SetSearch(false);
   }
 
+  const [StatusReport, SetStatusReport] = useState(false);
+  function ViewStatus() {
+    SetStatusReport(true);
+  }
+
   return (
     <div>
-      <Header onUser={Userpage} onLog={Loging} onBell = {Bellicon} onSearch = {Searchcar}/>
+      <Header
+        onUser={Userpage}
+        onLog={Loging}
+        onBell={Bellicon}
+        onSearch={Searchcar}
+      />
+      {StatusReport ? <Report onDisplay = {DisplayToggle}/> : null}
       <div className="flex ">
-        {User ? <UserProfile onFavourites={Favourite} onNotify={Notify} onAppoint={Appointment} onList = {Listings}/> : null}
+        {User ? (
+          <UserProfile
+            onFavourites={Favourite}
+            onNotify={Notify}
+            onAppoint={Appointment}
+            onList={Listings}
+          />
+        ) : null}
         {Favorites ? <MyFavourites /> : null}
         {Notifications ? <Notification /> : null}
-        {Appoint ? <Appointments /> : null}
+        {Appoint ? <Appointments onView={ViewStatus} onDisplay = {DisplayToggle}/> : null}
         {Listing ? <MyListings /> : null}
       </div>
       {Log ? <LoginPage /> : null}
-      {SearchCar ? <SellCarOne onSubmit = {SelectCar}/> : null}
-      {Select ? <SellCarTwo onsubmit = {carPrice}/> : null}
-      {CarPrice ? <SellCarThree/> : null}
+      {SearchCar ? <SellCarOne onSubmit={SelectCar} /> : null}
+      {Select ? <SellCarTwo onsubmit={carPrice} /> : null}
+      {CarPrice ? <SellCarThree /> : null}
       {/* Uncomment the components you want to render */}
       {/* <LoginPage/> */}
       {/* <SignUp/> */}
