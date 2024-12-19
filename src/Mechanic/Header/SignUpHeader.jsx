@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 export default function SignUp() {
 
     return (
-    <div className="bg-orange-400 h-16 flex items-center px-4">
+      <div className="bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 h-16 flex items-center px-6 shadow-lg">
       <div className="flex-grow"></div>
 
       <div className="flex items-center gap-10 relative">

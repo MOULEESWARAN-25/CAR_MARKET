@@ -3,14 +3,17 @@ import Header from "../Header/header";
 import UserProfile from "../UserProfile/UserProfile";
 import Profile from "../Mechanic/image/profileImage.png";
 
-export default function FillInspectionDataForm() {
+export default function FillInspectionDataForm({setActiveComponent}) {
   return (
     <div>
-      <Header />
-      <div className="flex flex-row">
-        <UserProfile />
-        <div className="w-[1100px] h-auto sticky top-16 left-96 mt-16 border-2 border-gray-300 p-6 shadow-md flex flex-col rounded-lg gap-8">
-          <h1 className="text-3xl font-medium">Fill Inspection Data</h1>
+      <button
+    className="absolute top-4 right-4 bg-gray-400 hover:bg-gray-300 text-white font-bold py-2 px-4 rounded-lg"
+    onClick={() => setActiveComponent("pendingWorks")}
+  >
+
+        Back
+      </button>
+          <h1 className="text-3xl font-medium pb-6">Fill Inspection Data</h1>
 
           {/* Inspection Form */}
           <div className="bg-white border border-gray-200 rounded-lg shadow-md p-6 mx-10">
@@ -142,9 +145,8 @@ export default function FillInspectionDataForm() {
                     />
                 </ul>
               </div>
+              <input type = "submit" className = "bg-orange-500 rounded-md p-2 text-white w-20"></input>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   );

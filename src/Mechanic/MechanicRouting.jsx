@@ -1,7 +1,8 @@
 import React from 'react'
-import Header from './Header/Header'
 import LoginPage from './Header/LoginPage';
 import SignUp from './Header/SignUp';
+import Profile from './MechProfile'
+
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 
 export default function MechanicRouting() {
