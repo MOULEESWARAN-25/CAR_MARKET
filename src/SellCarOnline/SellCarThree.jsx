@@ -4,7 +4,6 @@ import Header from '../Header/header';
 export default function SellCarThree() {
   return (
     <div>
-      <Header />
       <div className="py-12 px-6 flex flex-col items-center">
       <h1 className="text-2xl sm:text-3xl font-semibold p-4 text-center">
           <span className="text-orange-400">Sell{" "}</span>Car Online

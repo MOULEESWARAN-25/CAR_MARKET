@@ -19,7 +19,7 @@ import Model3 from './image/model3.png';
 import Model4 from './image/model4.png';
 import Model5 from './image/model5.png';
 
-const SellCarOne = () => {
+const SellCarOne = ({ onSubmit }) => { 
   const scrollContainerRef = useRef(null);
 
   const scroll = (scrollOffset) => {
@@ -52,8 +52,8 @@ const SellCarOne = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
+    <div className="min-h-screen">
+      {/* <Header /> */}
       <div className="flex flex-col items-center mt-6 px-4 sm:px-6 lg:px-8">
         <h1 className="text-2xl sm:text-3xl font-semibold text-center">
           <span className="text-orange-400">Sell{" "}</span>Car Online
@@ -132,7 +132,7 @@ const SellCarOne = () => {
               </div>
             </div>
             <div className="flex justify-end pt-3">
-              <Button className="text-white bg-orange-400 focus:ring-1 focus:ring-orange-400 px-3 py-2 text-lg font-semibold rounded-md h-10 w-auto sm:w-50 items-center">
+              <Button onClick = {onSubmit} className="text-white bg-orange-400 focus:ring-1 focus:ring-orange-400 px-3 py-2 text-lg font-semibold rounded-md h-10 w-auto sm:w-50 items-center">
                 Submit
               </Button>
             </div>

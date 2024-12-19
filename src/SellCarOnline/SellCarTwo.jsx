@@ -3,10 +3,9 @@ import Header from '../Header/header';
 import { Card, Button } from 'flowbite-react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
-export default function SellCarOnline() {
+export default function SellCarOnline({onsubmit}) {
   return (
     <div>
-      <Header />
       <div className="flex flex-col items-center mt-6">
         <h1 className="text-3xl font-semibold text-center">
           <span className="text-orange-400">Sell</span> Car Online
@@ -142,7 +141,7 @@ export default function SellCarOnline() {
                 </div>
               </div>
               <div className="flex justify-end pt-6">
-                <Button className="text-white bg-orange-400 focus:ring-1 focus:ring-orange-400 px-3 py-2 text-lg font-semibold rounded-md h-10 w-50 items-center">
+                <Button onClick={onsubmit} className="text-white bg-orange-400 focus:ring-1 focus:ring-orange-400 px-3 py-2 text-lg font-semibold rounded-md h-10 w-50 items-center">
                   Submit
                 </Button>
               </div>

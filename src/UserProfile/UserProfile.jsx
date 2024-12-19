@@ -12,9 +12,9 @@ import {
 } from "react-icons/fa";
 import Arrow from "../UserProfile/images/arrow.svg";
 
-export default function UserProfile({onFavourites, onNotify, onAppoint}) {
+export default function UserProfile({onFavourites, onNotify, onAppoint, onList}) {
   return (
-    <div className="mt-8 sticky left-10 w-72 h-[710px] rounded-lg border-2 border-gray-300 p-4 shadow-md flex flex-col items-center">
+    <div className="mt-8 sticky left-10 w-72 h-[670px] rounded-lg border-2 border-gray-300 p-4 shadow-md flex flex-col items-center">
       <div className="flex flex-col gap-3 w-full">
         <div className="flex items-center justify-center">
           <img src={AvatarUser} className="h-28" alt="User Avatar" />
@@ -34,7 +34,7 @@ export default function UserProfile({onFavourites, onNotify, onAppoint}) {
           </div>
         </div>
         <hr className="border-gray-300 my-3 w-full" />
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
           <div className="bg-gray-200 w-full h-12 rounded-lg flex items-center justify-between mt-3 px-4" onClick={onFavourites}>
             <div className="flex items-center gap-1">
               <FaHeart className="text-orange-500 text-xl mr-2" />
@@ -56,20 +56,20 @@ export default function UserProfile({onFavourites, onNotify, onAppoint}) {
             </div>
             <img src={Arrow} className="h-4" alt="Arrow" />
           </div>
-          <div className="bg-gray-200 w-full h-12 rounded-lg flex items-center justify-between mt-3 px-4">
+          <div className="bg-gray-200 w-full h-12 rounded-lg flex items-center justify-between mt-3 px-4" onClick={onList}>
             <div className="flex items-center gap-1">
               <FaList className="text-orange-500 text-xl mr-2" />
               <p className="text-lg">My Listings</p>
             </div>
             <img src={Arrow} className="h-4" alt="Arrow" />
           </div>
-          <div className="bg-gray-200 w-full h-12 rounded-lg flex items-center justify-between mt-3 px-4">
+          {/* <div className="bg-gray-200 w-full h-12 rounded-lg flex items-center justify-between mt-3 px-4">
             <div className="flex items-center gap-1">
               <FaSignOutAlt className="text-orange-500 text-xl mr-2" />
               <p className="text-lg">Logout</p>
             </div>
             <img src={Arrow} className="h-4" alt="Arrow" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
