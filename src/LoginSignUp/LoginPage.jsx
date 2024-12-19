@@ -3,6 +3,7 @@ import Header from "../Header/header";
 import { Card } from "flowbite-react";
 import { ReactComponent as EyeOff } from './image/eyeoff.svg'; 
 import { ReactComponent as Eye } from './image/eye.svg'; 
+import SignUpHeader from "../Header/SignUpHeader";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,8 +22,7 @@ export default function LoginPage() {
           }
         `}
       </style>
-
-      <Header />
+      <SignUpHeader/>
       <div className="h-screen w-full bg-[url('https://shorturl.at/DGQGu')] bg-cover bg-center flex items-center justify-center">
         <Card className="w-full max-w-[450px] h-auto border-2 border-orange-400 ">
           <div className="flex justify-center items-center flex-col gap-4 p-3">
