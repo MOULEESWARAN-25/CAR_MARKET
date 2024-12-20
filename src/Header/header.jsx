@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Bellicon from "D:/SSG-FINAL/CAR_MARKET/car_market_place/src/Header/image/bellicon.svg";
+import Bellicon from "./image/bellicon.svg";
 import Avatar from "../Header/image/avatar.svg";
 import { useNavigate } from "react-router-dom";
 import { FaHeart, FaBell, FaCalendarAlt, FaSignOutAlt } from "react-icons/fa";

@@ -76,7 +76,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   id="togglePassword"
-                  className="absolute  right-3 mr-[580px] mt-[10px] text-gray-500 hover:text-gray-700 justify-center"
+                  className="absolute  right-3 mr-[660px] mt-[10px] text-gray-500 hover:text-gray-700 justify-center"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
