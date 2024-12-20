@@ -21,7 +21,7 @@ export default function Appointment({onView}) {
   }
 
   return (
-    <div className="w-[1100px] h-[640px] sticky left-96 mt-12 border-2 border-gray-300 p-10 shadow-md flex flex-col rounded-lg gap-10">
+    <div className="w-[1100px] h-[650px] sticky left-96 mt-16 border-2 border-gray-300 p-10 shadow-md flex flex-col rounded-lg gap-10">
       <div className="flex border-2 w-[450px] rounded-xl cursor-pointer">
         <div
           className={`flex justify-center items-center h-10 w-56 rounded-xl font-medium ${

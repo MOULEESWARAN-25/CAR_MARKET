@@ -1,8 +1,6 @@
 import React from "react";
-import UserAvatar from "../Profilecard/images/UserAvatar.svg";
 import car from "../Profilecard/images/car.svg";
-import Loc from "../Profilecard/images/location.svg";
-import { FaUser, FaCalendarAlt, FaClock, FaMapMarkerAlt, FaUserTie } from "react-icons/fa";
+import { FaUser, FaCalendarAlt, FaClock, FaMapMarkerAlt} from "react-icons/fa";
 
 export default function Profile() {
   return (

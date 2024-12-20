@@ -3,7 +3,7 @@ import Carcard from "../Carcard/carcard";
 import Tick from "../UserProfile/images/tick.svg";
 export default function Notifications() {
   return (
-    <div className="w-[1100px] h-[620px] sticky left-96 mt-16 border-2 border-gray-300 p-10 shadow-md flex flex-col rounded-lg gap-10">
+    <div className="w-[1100px] h-[620px] sticky left-96 mt-12 border-2 border-gray-300 p-10 shadow-md flex flex-col rounded-lg gap-10">
       <h1 className="text-3xl font-medium">Notifications</h1>
       <div className="flex gap-5 border-2 border-gray-300 p-6 shadow-custom rounded-lg items-center">
         <div>

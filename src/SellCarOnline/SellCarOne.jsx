@@ -19,7 +19,7 @@ import Model3 from './image/model3.png';
 import Model4 from './image/model4.png';
 import Model5 from './image/model5.png';
 
-const SellCarOne = ({ onSubmit }) => { 
+const SellCarOne = ({ onchanging }) => { 
   const scrollContainerRef = useRef(null);
 
   const scroll = (scrollOffset) => {
@@ -132,7 +132,7 @@ const SellCarOne = ({ onSubmit }) => {
               </div>
             </div>
             <div className="flex justify-end pt-3">
-              <Button onClick = {onSubmit} className="text-white bg-orange-400 focus:ring-1 focus:ring-orange-400 px-3 py-2 text-lg font-semibold rounded-md h-10 w-auto sm:w-50 items-center">
+              <Button onClick = {onchanging} className="text-white bg-orange-400 focus:ring-1 focus:ring-orange-400 px-3 py-2 text-lg font-semibold rounded-md h-10 w-auto sm:w-50 items-center">
                 Submit
               </Button>
             </div>

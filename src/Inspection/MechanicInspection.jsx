@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import UserAvatar from "../Profilecard/images/UserAvatar.svg";
 import car from "../Profilecard/images/car.svg";
 import Pending from "../Inspection/image/pending.svg";

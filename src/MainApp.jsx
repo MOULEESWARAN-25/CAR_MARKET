@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LoginPage from "./LoginSignUp/LoginPage";
+
 import SignUp from "./LoginSignUp/SignUp";
 import SellCarOne from "./SellCarOnline/SellCarOne";
 import SellCarTwo from "./SellCarOnline/SellCarTwo";
@@ -10,14 +10,13 @@ import Notification from "./UserProfile/Notifications";
 import UserProfile from "./UserProfile/UserProfile";
 import MyFavourites from "./UserProfile/MyFavourites";
 import Appointments from "./UserProfile/Appointments";
-import MyListings from "./UserProfile/MyListings";
 import Report from "./Inspection/MechanicStatus";
-import pendingSvg from "./Inspection/image/pending.svg";
+import HomePage from "./BuyerHomePage/HomePage";
 
 export default function MainApp() {
   const [Log, SetLog] = useState(false);
   const [Notifications, SetNotifications] = useState(false);
-  const [User, SetUser] = useState(true);
+  const [User, SetUser] = useState(false);
   const [Favorites, setFavorites] = useState(false);
   const [Appoint, SetAppoint] = useState(false);
   const [Listing, SetListing] = useState(false);
@@ -25,12 +24,27 @@ export default function MainApp() {
   const [SearchCar, SetSearch] = useState(false);
   const [Select, SetSelect] = useState(false);
   const [CarPrice, SetCarPrice] = useState(false);
+  const [Homepage, SetHomePage] = useState(true);
+
+  function showHomePage() {
+    SetHomePage(true);
+    SetCarPrice(false);
+    SetSelect(false);
+    SetSearch(false);
+    SetNotifications(false);
+    SetListing(false);
+    SetAppoint(false);
+    SetLog(false);
+    SetUser(false);
+    setFavorites(false);
+  }
 
   function DisplayToggle() {
     SetStatusReport(false);
   }
 
   function carPrice() {
+    SetHomePage(false);
     SetCarPrice(true);
     SetSearch(false);
     SetLog(false);
@@ -42,6 +56,7 @@ export default function MainApp() {
     SetSelect(false);
   }
   function Searchcar() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetSearch(true);
     SetLog(false);
@@ -53,6 +68,7 @@ export default function MainApp() {
     SetSelect(false);
   }
   function Loging() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetLog(true);
     SetUser(false);
@@ -65,6 +81,7 @@ export default function MainApp() {
   }
 
   function Notify() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetNotifications(true);
     setFavorites(false);
@@ -76,6 +93,7 @@ export default function MainApp() {
   }
 
   function Userpage() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetUser(true);
     SetLog(false);
@@ -88,6 +106,7 @@ export default function MainApp() {
   }
 
   function Favourite() {
+    SetHomePage(false);
     SetCarPrice(false);
     setFavorites(true);
     SetLog(false);
@@ -99,6 +118,7 @@ export default function MainApp() {
   }
 
   function Appointment() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetAppoint(true);
     SetNotifications(false);
@@ -110,6 +130,7 @@ export default function MainApp() {
   }
 
   function Listings() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetListing(true);
     SetNotifications(false);
@@ -121,6 +142,7 @@ export default function MainApp() {
   }
 
   function Bellicon() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetNotifications(true);
     SetListing(false);
@@ -132,6 +154,7 @@ export default function MainApp() {
     SetUser(true);
   }
   function SelectCar() {
+    SetHomePage(false);
     SetCarPrice(false);
     SetSelect(true);
     SetSearch(false);
@@ -141,7 +164,6 @@ export default function MainApp() {
     SetLog(false);
     SetUser(false);
     setFavorites(false);
-    SetSearch(false);
   }
 
   const [StatusReport, SetStatusReport] = useState(false);
@@ -156,8 +178,10 @@ export default function MainApp() {
         onLog={Loging}
         onBell={Bellicon}
         onSearch={Searchcar}
+        onHome={showHomePage}
       />
-      {StatusReport ? <Report onDisplay = {DisplayToggle}/> : null}
+      {Homepage ? <HomePage /> : null}
+      {StatusReport ? <Report onDisplay={DisplayToggle} /> : null}
       <div className="flex ">
         {User ? (
           <UserProfile
@@ -169,16 +193,11 @@ export default function MainApp() {
         ) : null}
         {Favorites ? <MyFavourites /> : null}
         {Notifications ? <Notification /> : null}
-        {Appoint ? <Appointments onView={ViewStatus} onDisplay = {DisplayToggle}/> : null}
-        {Listing ? <MyListings /> : null}
+        {Appoint ? <Appointments onView={ViewStatus} onDisplay={DisplayToggle} /> : null}
       </div>
-      {Log ? <LoginPage /> : null}
       {SearchCar ? <SellCarOne onSubmit={SelectCar} /> : null}
       {Select ? <SellCarTwo onsubmit={carPrice} /> : null}
       {CarPrice ? <SellCarThree /> : null}
-      {/* Uncomment the components you want to render */}
-      {/* <LoginPage/> */}
-      {/* <SignUp/> */}
     </div>
   );
 }
